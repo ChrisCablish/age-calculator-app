@@ -1,0 +1,8 @@
+.inputs__group {
+    display: flex;
+}
+
+.bd__sec {
+    display: flex;
+    flex-direction: column;
+}
