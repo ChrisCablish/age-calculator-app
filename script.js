@@ -1,7 +1,7 @@
+const birthdayForm = document.getElementById('birthday__form');
 const dayEntered = document.getElementById('input__day');
 const monthEntered = document.getElementById('input__month');
 const yearEntered = document.getElementById('input__year');
-const birthdayForm = document.getElementById('birthday__form');
 const submitButton = document.getElementById('submit');
 const currentDay = new Date().getDate();
 const currentMonth = new Date().getMonth() + 1;
@@ -15,37 +15,53 @@ yearsDisplay.innerText = '--';
 monthsDisplay.innerText = '--';
 daysDisplay.innerText = '--';
 
-
-
 birthdayForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const calculateDays = () => {
-        return difference = currentDay - dayEntered.value;
+        return currentDay - dayEntered.value;
     }
     
     const calculateMonths = () => {
-         return difference = currentMonth - monthEntered.value;
+         return currentMonth - monthEntered.value;
         }
 
     const calculateYears = () => {
-        return difference = currentYear - yearEntered.value;
+        return currentYear - yearEntered.value;
         }
+
 
     let dayDifference = calculateDays();
     let monthDifference = calculateMonths();
     let yearDifference = calculateYears();
 
+    if (dayDifference < 0) {
+        dayDifference = numberOfDays + dayDifference;
+        monthDifference = monthDifference -1;
+    }
+
+    if (monthDifference < 0) {
+        monthDifference = 12 + monthDifference;
+        yearDifference = yearDifference -1;
+    }
+
+    if (yearDifference < 0) {
+        console.log('pick a valid year');
+    }
+
     yearsDisplay.innerText = yearDifference;
     monthsDisplay.innerText = monthDifference;
-    daysDisplay.innerText = dayDifference;
-
-      
+    daysDisplay.innerText = dayDifference; 
 });
 
+const findNumberOfDays = (month) => {
+    if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
+        return 31;
+    } else if ( month === 4 || month === 6 || month === 9 || month === 11) {
+        return 30;
+    } else {
+        return 28;
+    }
+}
 
-
-
- 
-
-
+const numberOfDays = findNumberOfDays(currentMonth)
