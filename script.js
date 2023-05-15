@@ -58,12 +58,7 @@ birthdayForm.addEventListener('submit', (event) => {
         yearDifference = yearDifference -1;
     }
 
-    //if yearDiffernce is less than 0 it means user has input a future year, which is invalid
-    if (yearDifference < 0) {
-        yearErrorMessage.style.display = 'inline';
-        setValuesToNull();
-    }
-
+    
     //update diplays to show elapsed time between current date and birthdate (aka users age)
     yearsDisplay.innerText = yearDifference;
     monthsDisplay.innerText = monthDifference;
@@ -89,6 +84,12 @@ birthdayForm.addEventListener('submit', (event) => {
         dayErrorMessage.style.display = 'inline';
         setValuesToNull();
     }
+
+  //if yearDiffernce is less than 0 it means user has input a future year, which is invalid
+  if (yearDifference < 0) {
+    yearErrorMessage.style.display = 'inline';
+    setValuesToNull();
+}
 
 });
 
