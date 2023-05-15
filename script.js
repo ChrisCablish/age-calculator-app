@@ -26,6 +26,7 @@ setValuesToNull();
 //click event for submit
 birthdayForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    clearErrors();
 
     //find difference between current d/m/y and birth d/m/y
     const calculateDays = () => {
@@ -130,6 +131,12 @@ const findNumberOfDays = (month) => {
 }
 
 const numberOfDays = findNumberOfDays(currentMonth)
+
+const clearErrors = () => {
+  dayErrorMessage.style.display = 'none';
+  monthErrorMessage.style.display = 'none'; 
+  yearErrorMessage.style.display = 'none';
+}
 
 
 
