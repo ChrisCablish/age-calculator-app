@@ -132,6 +132,7 @@ const findNumberOfDays = (month) => {
 
 const numberOfDays = findNumberOfDays(currentMonth)
 
+//function to clear previous error message when submit is clicked
 const clearErrors = () => {
   dayErrorMessage.style.display = 'none';
   monthErrorMessage.style.display = 'none'; 

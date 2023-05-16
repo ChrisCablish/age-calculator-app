@@ -1,12 +1,96 @@
+:root {
+
+    /* Primary */
+
+    --Purple: hsl(259, 100%, 65%);
+    --LightRed: hsl(0, 100%, 67%);
+
+    /* Neutral */
+
+    --white: hsl(0, 0%, 100%);
+    --offWhite: hsl(0, 0%, 94%);
+    --lightGrey: hsl(0, 0%, 86%);
+    --smokeyGrey: hsl(0, 1%, 44%);
+    --offBlack: hsl(0, 0%, 8%);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 95%;
+}
+
+/* BIRTHDAY FORM */
+
+.birthday__form {
+    border-bottom: 1px solid black;  
+}
+
 .inputs__group {
     display: flex;
+    flex: 1;
+    justify-content: space-between;
+    justify-content: center;
+    
 }
 
 .bd__sec {
     display: flex;
     flex-direction: column;
+    width: 30%;
+    justify-content: space-between;
+    
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.25em;
+    text-align: left;
+}
+
+input {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 5px;
+    border: none;
+    outline: 1px solid black;
 }
 
 .error {
     display: none;
 }
+
+button {
+    font-size: 0;
+    padding: 20px;
+    border-radius: 50%;
+    border: none;
+    position: relative;
+    transform: translate(0, 50%);
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+.age__displayed {
+    font-size: 56px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 62px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+

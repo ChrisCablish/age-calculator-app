@@ -6,28 +6,34 @@
   <title>Age calculator app</title>
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
     <form class="birthday__form" id="birthday__form">
       <div class="inputs__group">
         <div class="bd__day bd__sec">
-          <label for="day" class="label__day">Day</label>
+          <label for="day" class="label__day day">Day</label>
           <input placeholder="DD" type="text" class="input__day" id="input__day">
           <span class="day__error error" id="day__error">Must be a valid day</span>
         </div>
         <div class="bd__month bd__sec">
-          <label for="month" class="label__month">Month</label>
+          <label for="month" class="label__month label">Month</label>
           <input placeholder="MM" type="text" class="input__month" id="input__month">
           <span class="month__error error" id="month__error">Must be a valid month</span>
         </div>
         <div class="bd__year bd__sec">
-          <label for="" class="label__year">Year</label>
+          <label for="" class="label__year label">Year</label>
           <input placeholder="YYYY" type="text" class="input__year" id="input__year">
           <span class="year__error error" id="year__error">Must be in the past</span>
         </div>
       </div>
-      <button type='submit' class="submit" id="submit">submit</button>
+      <button type='submit' class="submit" id="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+      submit</button>
     </form>
     <section class="age__displayed">
       <div class="number__of__years">
