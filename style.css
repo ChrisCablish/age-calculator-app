@@ -57,7 +57,6 @@ main {
     display: flex;
     flex-direction: column;
     max-width: 30%;
-    /* justify-content: space-between; */
     gap: 4px;
     
 }
@@ -141,12 +140,10 @@ svg {
     border-bottom-right-radius: 15rem;
   }
 
+/* BIRTHDAY FORM */
+
   .birthday__form {
     text-align: right;
-  }
-
-  .inputs__group {
-    max-width: 70%;
   }
 
   .label {
@@ -160,6 +157,10 @@ svg {
     color: var(--smokeyGrey)
 }
 
+  .inputs__group {
+    max-width: 70%;
+  }
+
 input {
     font-size: 32px;
     font-weight: 700;
@@ -167,6 +168,8 @@ input {
     letter-spacing: 0.01em;
     text-align: left;
 }
+
+/* BUTTON  */
 
 button {
     padding: 26px;
@@ -182,6 +185,8 @@ svg {
     height: 26px;
 }
 
+/* AGE DISPLAYED */
+
 .age__displayed {
     font-size: 104px;
     font-style: italic;
@@ -191,6 +196,5 @@ svg {
     text-align: left;
     margin-top: 47.5px;
 }
-
 }
 

@@ -157,6 +157,8 @@ const clearErrors = () => {
   yearErrorMessage.style.display = 'none';
 }
 
+//functins for changing input border and label colors
+
 const badDay = () => {
   dayEntered.style.borderColor = "hsl(0, 100%, 67%)";
   dayLabelTop.style.color = "hsl(0, 100%, 67%)";
