@@ -13,6 +13,9 @@ const yearErrorMessage = document.getElementById('year__error');
 const yearsDisplay = document.getElementById('years__number');
 const monthsDisplay = document.getElementById('months__number');
 const daysDisplay = document.getElementById('days__number');
+const dayLabelTop = document.getElementById('label__day');
+const monthLabelTop = document.getElementById('label__month');
+const yearLabelTop = document.getElementById('label__year');
 
 // display "--" at start and if date is invalid;
 const setValuesToNull = () => {
@@ -27,6 +30,7 @@ setValuesToNull();
 birthdayForm.addEventListener('submit', (event) => {
     event.preventDefault();
     clearErrors();
+    resetErrorColors();
 
     //find difference between current d/m/y and birth d/m/y
     const calculateDays = () => {
@@ -72,23 +76,35 @@ birthdayForm.addEventListener('submit', (event) => {
     if (parseInt(monthEntered.value) > 12 || parseInt(monthEntered.value) < 1) {
         //if it is out of range, display error and do not display age
         monthErrorMessage.style.display = 'inline';
+        badMonth();
         setValuesToNull();
         //also if month is out of range, check if day value is within accapetable day value parameters (number between 1 and 31)
         if (parseInt(dayEntered.value) > 31 || parseInt(dayEntered.value) < 1) {
             //if day is out of range, display day error message
             dayErrorMessage.style.display = 'inline';
+            badDay();
         }
+
+        //if yearDiffernce is less than 0 it means user has input a future year, which is invalid
+        if (yearDifference < 0) {
+          yearErrorMessage.style.display = 'inline';
+          badYear();
+          setValuesToNull();
+      }
+
         return;
     }
     //check if day is valid. 
     if (isARealDay === false) {
         dayErrorMessage.style.display = 'inline';
+        badDay();
         setValuesToNull();
     }
 
   //if yearDiffernce is less than 0 it means user has input a future year, which is invalid
   if (yearDifference < 0) {
     yearErrorMessage.style.display = 'inline';
+    badYear();
     setValuesToNull();
 }
 
@@ -130,6 +146,8 @@ const findNumberOfDays = (month) => {
     }
 }
 
+
+
 const numberOfDays = findNumberOfDays(currentMonth)
 
 //function to clear previous error message when submit is clicked
@@ -139,6 +157,28 @@ const clearErrors = () => {
   yearErrorMessage.style.display = 'none';
 }
 
+const badDay = () => {
+  dayEntered.style.borderColor = "hsl(0, 100%, 67%)";
+  dayLabelTop.style.color = "hsl(0, 100%, 67%)";
+}
 
+const badMonth = () => {
+  monthEntered.style.borderColor = "hsl(0, 100%, 67%)";
+  monthLabelTop.style.color = "hsl(0, 100%, 67%)";
+}
+
+const badYear = () => {
+  yearEntered.style.borderColor = "hsl(0, 100%, 67%)";
+  yearLabelTop.style.color = "hsl(0, 100%, 67%)";
+}
+
+const resetErrorColors = () => {
+  dayEntered.style.borderColor = "hsl(0, 1%, 44%)";
+  monthEntered.style.borderColor = "hsl(0, 1%, 44%)";
+  yearEntered.style.borderColor = "hsl(0, 1%, 44%)";
+  dayLabelTop.style.color = "hsl(0, 1%, 44%)";
+  monthLabelTop.style.color = "hsl(0, 1%, 44%)";
+  yearLabelTop.style.color = "hsl(0, 1%, 44%)";
+  }
 
 

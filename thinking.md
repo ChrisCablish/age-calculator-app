@@ -1,1 +1,1 @@
-How do i get the error messages to hide if an invalid entry is replaced with a valid one?
+I need year error message to display when all three categories are invalid

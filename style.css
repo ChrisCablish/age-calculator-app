@@ -30,7 +30,7 @@ body {
 }
 
 main {
-    max-width: 90%;
+    max-width: 95%;
     background-color: white;
     padding: 48px 24px;
     border-radius: 1.5rem;
@@ -80,8 +80,8 @@ input {
     text-align: left;
     padding: 12px 16px;
     border-radius: 6px;
-    border: none;
-    outline: 1px solid var(--lightGrey);
+    /* border: none; */
+    border: 1px solid var(--lightGrey);
     color: var(--offBlack);
 }
 
@@ -93,6 +93,7 @@ input {
     line-height: 21px;
     letter-spacing: 0em;
     text-align: left;
+    color: var(--LightRed);
 
 }
 
