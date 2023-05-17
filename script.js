@@ -181,4 +181,3 @@ const resetErrorColors = () => {
   yearLabelTop.style.color = "hsl(0, 1%, 44%)";
   }
 
-
