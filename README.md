@@ -48,7 +48,7 @@ checkDays = (day,month) => {
 };    
 ```
 
-In this function I use a combination of Regular Expressions and conditional statements to determine whether or not a pair of numeric values representing a day and a month are valid or not. (example - Jan 31st is a valid date, Feb 31st is NOT a valid date, feb only has 28 days)  
+In this function I use a combination of Regular Expressions and conditional statements to determine whether or not a pair of numeric values representing a day and a month are valid or not. (example - Jan 31st is a valid date, Feb 31st is NOT a valid date, feb only has 28 days). If the month <input> is left blank, checkDays() will accept any day between 1 and 31 inclusive. 
   
 This calculator does not take leap years into account.   
   
